@@ -10,26 +10,38 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(200.0),
-          child: AppBar(
-            automaticallyImplyLeading: false, // hides leading widget
-          )
+    return new Stack(
+      children: <Widget>[
+        // The containers in the background
+        new Column(
+          children: <Widget>[
+            new Container(
+              height: MediaQuery.of(context).size.height * .35,
+              // height:300,
+              color: Colors.blue,
+            ),
+            new Container(
+              height: MediaQuery.of(context).size.height * .65,
+              color: Colors.white,
+            )
+          ],
+        ),
+        new Container(
+          alignment: Alignment.topCenter,
+          padding: new EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * .28,
+              right: 20.0,
+              left: 20.0),
+          child: new Container(
+            height: 300.0,
+            width: MediaQuery.of(context).size.width,
+            child: new Card(
+              color: Colors.white,
+              elevation: 4.0,
+            ),
           ),
-
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-           backgroundColor: Colors.blue,
-           items: [BottomNavigationBarItem(
-            title: Text('Favorites'),
-            icon: Icon(Icons.favorite),
-          ),
-          BottomNavigationBarItem(
-            title: Text('Music'),
-            icon: Icon(Icons.music_note),
-          ),],
-          ),
-    );
+        )
+      ],
+      );
   }
 }
