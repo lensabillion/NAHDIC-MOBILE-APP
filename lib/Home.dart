@@ -14,15 +14,26 @@ class Home extends StatelessWidget{
               new Container(
                 height: MediaQuery.of(context).size.height * .35,
               ),
-              Text("Welcome to",style: TextStyle(color: Colors.white,fontSize: 24),),
+              Text("Welcome to",
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.white,
+                  fontSize: 30
+                ),
+              ),
               new Container(
                 height: MediaQuery.of(context).size.height * .04,
               ),
-              Image.asset("images/logo.png"),
+              Image.asset("assets/logo.png"),
               new Container(
                 height: MediaQuery.of(context).size.height * .04,
               ),
-              Text("NAHDIC",style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.bold,fontSize: 40,),)
+              Text("NAHDIC",
+                  style: TextStyle(
+                  decoration: TextDecoration.none,
+                  color: Colors.indigo,
+                  fontSize: 60
+              ),)
             ],
           )
 
